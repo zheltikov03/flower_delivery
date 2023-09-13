@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>makingorder</class>
+ <widget class="QDialog" name="makingorder">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>529</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Новый заказ</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLineEdit" name="addressLine">
+     <property name="placeholderText">
+      <string>Адрес</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Дата</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="dateEdit">
+        <property name="minimumDateTime">
+         <datetime>
+          <hour>6</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2023</year>
+          <month>8</month>
+          <day>28</day>
+         </datetime>
+        </property>
+        <property name="minimumDate">
+         <date>
+          <year>2023</year>
+          <month>8</month>
+          <day>28</day>
+         </date>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Время</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="timeEdit">
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>9:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>9:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>11:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>11:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>12:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>12:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>14:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>14:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>15:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>15:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>16:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>17:00</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>17:30</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>18:00</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="previousButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&lt;&lt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_3">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="imageFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="image">
+              <property name="minimumSize">
+               <size>
+                <width>170</width>
+                <height>200</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>170</width>
+                <height>200</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>../../универ/4 семак/курсач желтиков/bouquets/0.png</pixmap>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="bouquetNamePrice">
+           <property name="text">
+            <string>Белые пионы с эвкалиптом 3000р.</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="nextButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&gt;&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="dopInfoEdit">
+     <property name="placeholderText">
+      <string>Дополнительная информация</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="makeOrderButton">
+     <property name="text">
+      <string>Создать заказ</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>makeOrderButton</sender>
+   <signal>clicked()</signal>
+   <receiver>makingorder</receiver>
+   <slot>makeOrder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>580</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nextButton</sender>
+   <signal>clicked()</signal>
+   <receiver>makingorder</receiver>
+   <slot>nextBouquet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>604</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>previousButton</sender>
+   <signal>clicked()</signal>
+   <receiver>makingorder</receiver>
+   <slot>previousBouquet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>makeOrder()</slot>
+  <slot>previousBouquet()</slot>
+  <slot>nextBouquet()</slot>
+ </slots>
+</ui>

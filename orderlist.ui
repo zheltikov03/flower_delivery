@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>orderList</class>
+ <widget class="QMainWindow" name="orderList">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>541</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Заказы</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="namelabel">
+         <property name="text">
+          <string>Имя</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logOutButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Выйти</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QListWidget" name="ordersList">
+      <property name="currentRow">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="newOrderButton">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Новый заказ</string>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="orderInfoButton">
+         <property name="text">
+          <string>Просмотр информации о заказе</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>773</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>newOrderButton</sender>
+   <signal>clicked()</signal>
+   <receiver>orderList</receiver>
+   <slot>makingOrderWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>logOutButton</sender>
+   <signal>clicked()</signal>
+   <receiver>orderList</receiver>
+   <slot>logOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>699</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ordersList</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>orderList</receiver>
+   <slot>orderInformationWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>386</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>orderInfoButton</sender>
+   <signal>clicked()</signal>
+   <receiver>orderList</receiver>
+   <slot>orderInformationWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>569</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>logOut()</slot>
+  <slot>makingOrderWindow()</slot>
+  <slot>orderInformationWindow()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "Владимир",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b",
+        "phone": "88005553535",
+        "status": 0
+    },
+    {
+        "id": 1,
+        "name": "Иван",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b",
+        "phone": "88005553536",
+        "status": 1
+    },
+    {
+        "id": 2,
+        "name": "Алексей",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b",
+        "phone": "88005553537",
+        "status": 2
+    }
+]
