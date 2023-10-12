@@ -92,7 +92,7 @@ bool database::newUser(user* User){
     userObject.insert("name", User->getName());
     userObject.insert("phone", User->getPhone());
     userObject.insert("password", User->getPassword());
-    userObject.insert("status", 0);
+    userObject.insert("status", User->getStatus());
 
     users.insert(users.end(), userObject);
     QJsonDocument* docOut = new QJsonDocument(users);

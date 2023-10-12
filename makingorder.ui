@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>529</width>
-    <height>606</height>
+    <width>485</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,25 +44,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QDateEdit" name="dateEdit">
-        <property name="minimumDateTime">
-         <datetime>
-          <hour>6</hour>
-          <minute>0</minute>
-          <second>0</second>
-          <year>2023</year>
-          <month>8</month>
-          <day>28</day>
-         </datetime>
-        </property>
-        <property name="minimumDate">
-         <date>
-          <year>2023</year>
-          <month>8</month>
-          <day>28</day>
-         </date>
-        </property>
-       </widget>
+       <widget class="QCalendarWidget" name="calendarWidget"/>
       </item>
       <item>
        <widget class="QLabel" name="label_3">
@@ -182,84 +164,28 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="previousButton">
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>&lt;&lt;</string>
+       <widget class="QTableView" name="tableView">
+        <property name="sortingEnabled">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_3">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+       <widget class="QLabel" name="image">
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>200</height>
+         </size>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QFrame" name="imageFrame">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QLabel" name="image">
-              <property name="minimumSize">
-               <size>
-                <width>170</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>170</width>
-                <height>200</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>../../универ/4 семак/курсач желтиков/bouquets/0.png</pixmap>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="bouquetNamePrice">
-           <property name="text">
-            <string>Белые пионы с эвкалиптом 3000р.</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="nextButton">
         <property name="maximumSize">
          <size>
-          <width>50</width>
-          <height>16777215</height>
+          <width>170</width>
+          <height>200</height>
          </size>
         </property>
         <property name="text">
-         <string>&gt;&gt;</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -301,33 +227,17 @@
    </hints>
   </connection>
   <connection>
-   <sender>nextButton</sender>
-   <signal>clicked()</signal>
+   <sender>tableView</sender>
+   <signal>clicked(QModelIndex)</signal>
    <receiver>makingorder</receiver>
-   <slot>nextBouquet()</slot>
+   <slot>selectBouquet(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>604</x>
-     <y>248</y>
+     <x>176</x>
+     <y>207</y>
     </hint>
     <hint type="destinationlabel">
-     <x>326</x>
-     <y>302</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>previousButton</sender>
-   <signal>clicked()</signal>
-   <receiver>makingorder</receiver>
-   <slot>previousBouquet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>47</x>
-     <y>248</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>326</x>
+     <x>264</x>
      <y>302</y>
     </hint>
    </hints>
@@ -335,7 +245,6 @@
  </connections>
  <slots>
   <slot>makeOrder()</slot>
-  <slot>previousBouquet()</slot>
-  <slot>nextBouquet()</slot>
+  <slot>selectBouquet(QModelIndex)</slot>
  </slots>
 </ui>

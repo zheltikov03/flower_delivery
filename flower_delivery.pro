@@ -10,9 +10,11 @@ CONFIG += c++17
 SOURCES += \
     authorization.cpp \
     bouquet.cpp \
+    bouquetsedit.cpp \
     database.cpp \
     main.cpp \
     makingorder.cpp \
+    newemployee.cpp \
     order.cpp \
     orderinformation.cpp \
     orderlist.cpp \
@@ -22,8 +24,10 @@ SOURCES += \
 HEADERS += \
     authorization.h \
     bouquet.h \
+    bouquetsedit.h \
     database.h \
     makingorder.h \
+    newemployee.h \
     order.h \
     orderinformation.h \
     orderlist.h \
@@ -32,7 +36,9 @@ HEADERS += \
 
 FORMS += \
     authorization.ui \
+    bouquetsedit.ui \
     makingorder.ui \
+    newemployee.ui \
     orderinformation.ui \
     orderlist.ui \
     registration.ui

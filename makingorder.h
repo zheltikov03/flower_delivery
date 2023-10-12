@@ -5,7 +5,6 @@
 
 #include "user.h"
 #include "bouquet.h"
-#include "order.h"
 
 namespace Ui {
 class makingorder;
@@ -22,14 +21,12 @@ public:
 private:
     Ui::makingorder *ui;
     user* User;
-    order newOrder;
     QList<bouquet>* bouquets;
     static const QString imagesFile;
     int bouquetIndex;
 private slots:
-    void nextBouquet();
-    void previousBouquet();
     void makeOrder();
+    void selectBouquet(const QModelIndex &index);
 };
 
 #endif // MAKINGORDER_H

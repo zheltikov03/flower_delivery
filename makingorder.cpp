@@ -1,7 +1,10 @@
 #include "makingorder.h"
 #include "ui_makingorder.h"
 
+#include <QStandardItemModel>
+
 #include "database.h"
+#include "order.h"
 
 const QString makingorder::imagesFile = "D:/университет/курсовой проекс/bouquets/";
 
@@ -13,19 +16,30 @@ makingorder::makingorder(user* User, QWidget *parent) :
     this->User = User;
     database base;
     bouquets = base.getBouquets();
-    if(bouquets->size() > 0){
-        bouquetIndex = 0;
-        bouquet Bouquet = bouquets->at(bouquetIndex);
-        QPixmap pixmap;
-        pixmap.load(imagesFile + QString::number(Bouquet.getId()) + ".jpg");
-        ui->image->setPixmap(pixmap.scaled(170, 200, Qt::KeepAspectRatio));
-        ui->bouquetNamePrice->setText(Bouquet.getName() + " " + QString::number(Bouquet.getPrice()) + "р");
 
-        ui->dateEdit->setMinimumDate(QDate::currentDate().addDays(1));
-        ui->previousButton->setDisabled(true);
-        if(bouquetIndex == bouquets->size()-1)
-            ui->nextButton->setDisabled(true);
+    QStandardItemModel* model = new QStandardItemModel(ui->tableView);
+
+    model->setHorizontalHeaderLabels(QStringList() << "id" << "Название" << "Цена");
+
+    for (int row = 0; row < bouquets->count(); ++row) {
+        QList<QStandardItem *> items;
+        bouquet bouquet = bouquets->at(row);
+        items.append(new QStandardItem(QString::number(row)));
+        items.append(new QStandardItem(bouquet.getName()));
+        items.append(new QStandardItem(QString::number(bouquet.getPrice())));
+        model->appendRow(items);
     }
+
+    ui->tableView->setModel(model);
+    ui->tableView->hideColumn(0);
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableView->setSortingEnabled(true);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    QHeaderView* horizontalHeader = ui->tableView->horizontalHeader();
+    horizontalHeader->setSectionResizeMode(QHeaderView::Stretch);
+
+    ui->calendarWidget->setMinimumDate(QDate::currentDate().addDays(1));
 }
 
 makingorder::~makingorder()
@@ -33,36 +47,11 @@ makingorder::~makingorder()
     delete ui;
 }
 
-void makingorder::nextBouquet(){
-    bouquetIndex++;
-    bouquet Bouquet = bouquets->at(bouquetIndex);
-    QPixmap pixmap;
-    pixmap.load(imagesFile + QString::number(Bouquet.getId()) + ".jpg");
-    ui->image->setPixmap(pixmap.scaled(170, 200, Qt::KeepAspectRatio));
-    ui->bouquetNamePrice->setText(Bouquet.getName() + " " + QString::number(Bouquet.getPrice()) + "р");
-
-    ui->previousButton->setDisabled(false);
-    if(bouquetIndex == bouquets->size()-1)
-        ui->nextButton->setDisabled(true);
-}
-
-void makingorder::previousBouquet(){
-    bouquetIndex--;
-    bouquet Bouquet = bouquets->at(bouquetIndex);
-    QPixmap pixmap;
-    pixmap.load(imagesFile + QString::number(Bouquet.getId()) + ".jpg");
-    ui->image->setPixmap(pixmap.scaled(170, 200, Qt::KeepAspectRatio));
-    ui->bouquetNamePrice->setText(Bouquet.getName() + " " + QString::number(Bouquet.getPrice()) + "р");
-
-    ui->nextButton->setDisabled(false);
-    if(bouquetIndex == 0)
-        ui->previousButton->setDisabled(true);
-}
-
 void makingorder::makeOrder(){
     QDateTime dateTime;
-    dateTime.setDate(ui->dateEdit->date());
+    dateTime.setDate(ui->calendarWidget->selectedDate());
     dateTime.setTime(QTime::fromString(ui->timeEdit->currentText(), "h:mm"));
+    order newOrder;
 
     newOrder.setUserID(User->getId());
     newOrder.setBouquetID(bouquetIndex);
@@ -77,4 +66,13 @@ void makingorder::makeOrder(){
     base.newOrder(newOrder);
 
     this->close();
+}
+
+void makingorder::selectBouquet(const QModelIndex &index)
+{
+    bouquetIndex = ui->tableView->model()->index(index.row(), 0).data().toInt();
+    bouquet Bouquet = bouquets->at(bouquetIndex);
+    QPixmap pixmap;
+    pixmap.load(imagesFile + QString::number(Bouquet.getId()) + ".jpg");
+    ui->image->setPixmap(pixmap.scaled(170, 200, Qt::KeepAspectRatio));
 }

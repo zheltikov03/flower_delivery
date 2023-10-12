@@ -45,6 +45,7 @@ void registration::reg(){
     User->setName(ui->nameLine->text());
     User->setPhone(ui->phoneLine->text());
     User->setPassword(QString(QCryptographicHash::hash(ui->passLine->text().toUtf8(),QCryptographicHash::Md5).toHex()));
+    User->setStatus(0);
     database base;
     if(!base.newUser(User))
         QMessageBox::critical(this, "Ошибка","Не удалось записать данные в файл!");
