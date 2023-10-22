@@ -4,9 +4,9 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
-const QString database::usersFile = "D:/университет/курсовой проекс/jsonExampleUsers.json";
-const QString database::bouquetsFile = "D:/университет/курсовой проекс/jsonExampleBouquets.json";
-const QString database::ordersFile = "D:/университет/курсовой проекс/jsonExampleOrders.json";
+const QString database::usersFile = "D:/университет/курсовой проект/jsonExampleUsers.json";
+const QString database::bouquetsFile = "D:/университет/курсовой проект/jsonExampleBouquets.json";
+const QString database::ordersFile = "D:/университет/курсовой проект/jsonExampleOrders.json";
 
 QJsonDocument* database::readJson(QString name){
     QString val;
