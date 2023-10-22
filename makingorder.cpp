@@ -6,7 +6,7 @@
 #include "database.h"
 #include "order.h"
 
-const QString makingorder::imagesFile = "D:/университет/курсовой проекс/bouquets/";
+const QString makingorder::imagesFile = "D:/университет/курсовой проект/bouquets/";
 
 makingorder::makingorder(user* User, QWidget *parent) :
     QDialog(parent),
